@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans:wght@300;500&display=swap');
+
+:root {
+  --fontPoppins: "Poppins", sans-serif;
+  --fontWorkSans: "Work Sans", sans-serif;
+  --backgroundImg: url(./assets/background_photo_desktop.jpeg);
+  --mainColor: #010c3f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  padding: .77rem 0;
+  background-color: var(--mainColor);
+  text-align: center;
+  font-family: var(--fontPoppins);
+  font-size: 1.88rem;
+  color: #fff;
+  .highlight {
+    color: #6c41ec;
+  }
+}
+
+h2 {
+  font-family: var(--fontPoppins);
+  font-size: 1.55rem;
+}
+
+.App {
+  height: 100%;
+  padding: 0 17% 10% 17%;
+  background-image: var(--backgroundImg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--fontWorkSans);
+  font-weight: 500;
+  color: #fff;
+}
+
+.App-playlist {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1020px) {
+  .App-playlist {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
