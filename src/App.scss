@@ -5,6 +5,7 @@
   --fontWorkSans: "Work Sans", sans-serif;
   --backgroundImg: url(./assets/background_photo_desktop.jpeg);
   --mainColor: #010c3f;
+  --secondaryColor: #6c41ec;
 }
 
 * {
@@ -29,7 +30,7 @@ h1 {
   font-size: 1.88rem;
   color: #fff;
   .highlight {
-    color: #6c41ec;
+    color: var(--secondaryColor);
   }
 }
 
