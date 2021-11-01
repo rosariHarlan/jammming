@@ -1,10 +1,11 @@
 import "./SearchResults.scss";
+import TrackList from "./TrackList";
 
-const SearchResult = () => {
+const SearchResult = (props) => {
   return (
     <div className="SearchResults">
       <h2>Results</h2>
-      {/* <!-- Add a TrackList component --> */}
+      <TrackList tracks={props.SearchResults}/>
     </div>
   );
 };

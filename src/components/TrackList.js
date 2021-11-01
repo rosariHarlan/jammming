@@ -1,9 +1,12 @@
-import "./TrackList.scss"
+import "./TrackList.scss";
+import Track from "./Track";
 
-const TrackList = () => {
+const TrackList = (props) => {
   return (
     <div className="TrackList">
-      {/* <!-- You will add a map method that renders a set of Track components  --> */}
+      {props.tracks.map((track) => {
+        return <Track track={track} key={track.id} />;
+      })}
     </div>
   );
 };
