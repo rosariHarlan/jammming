@@ -1,6 +1,8 @@
 import "./Track.scss"
 
 const Track = (props) => {
+  const { name, artist, album } = props;
+
     const renderAction = () => {
         if (props.isRemoval) {
             return <button className="Track-action">-</button>
@@ -11,8 +13,8 @@ const Track = (props) => {
   return (
     <div className="Track">
       <div className="Track-information">
-        <h3>track name will go here</h3>
-        <p>track artist will go here | track album will go here</p>
+        <h3>{name}</h3>
+        <p>{artist} | {album}</p>
       </div>
       {renderAction()}
     </div>
