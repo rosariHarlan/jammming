@@ -46,18 +46,17 @@ const App = () => {
   }, [search]);
 
   const addTrack = (track) => {
-    let tracks = playlistTracks;
-    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
-      return;
-    }
-      tracks.push(track);
-      setPlaylistTracks([{ playlistTracks: tracks }]);
-  };
+    setPlaylistTracks(oldPlaylist => {
+      if (oldPlaylist.includes(track)) {
+        return oldPlaylist;
+      } else {
+        return [...oldPlaylist, track];
+      }
+    });
+  }
 
   const removeTrack = (track) => {
-    let tracks = playlistTracks;
-    tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
-    setPlaylistTracks([{ playlistTracks: tracks }]);
+    setPlaylistTracks(oldPlaylist => oldPlaylist.filter((x => track !== x)));
   }
 
   const updatePlaylistName = (name) => {
