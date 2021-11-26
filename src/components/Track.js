@@ -1,10 +1,10 @@
 import "./Track.scss";
 
 const Track = (props) => {
-  const { onAdd, track, onRemove, isRemoval } = props;
+  const { onRemove, addTrack, isRemoval, track } = props;
 
   const addToPlaylist = () => {
-    onAdd(track);
+    addTrack(track);
   };
 
   const removeFromPlaylist = () => {
@@ -29,8 +29,8 @@ const Track = (props) => {
 
   return (
     <div className="Track">
-      <div className="Track-information" key={track.id}>
-        <h3>{track.name}</h3>
+      <div className="Track-information">
+        <h3>{track.title}</h3>
         <p>
           {track.artist} | {track.album}
         </p>

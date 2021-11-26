@@ -1,19 +1,37 @@
 import "./Playlist.scss";
-import TrackList from "./TrackList";
+import Track from "./Track";
+import React, { useState, useEffect } from "react";
 
 const Playlist = (props) => {
+  const [playlistName, setPlaylistName] = useState("My Playlist");
 
-  const { playlistTracks, onRemove, onNameChange, onSave } = props;
+  useEffect(() => {
+    setPlaylistName(playlistName, [playlistName]);
+  }, [playlistName]);
 
-  const handleNameChange = (e) => {
-    onNameChange(e.target.value);
+  const { playlistTracks, onRemove, createSpotifyPlaylist } = props;
+
+  async function handleSavePlaylist() {
+    const trackIDs = playlistTracks.map(x => x.id);
+    createSpotifyPlaylist(playlistName, trackIDs);
   }
 
   return (
     <div className="Playlist">
-      <input defaultValue={'New Playlist'} onChange={handleNameChange}/>
-      <TrackList tracks={playlistTracks} onRemove={onRemove} isRemoval={true}/>
-      <button className="Playlist-save" onClick={onSave}>SAVE TO SPOTIFY</button>
+      <input onChange={e => setPlaylistName(e.target.value)} placeholder={playlistName} />
+      <div className="TrackList">
+        {playlistTracks && playlistTracks.map((item) => (
+          <Track 
+            key={item.id}
+            track={item}
+            onRemove={onRemove}
+            isRemoval={true}
+          />)
+        )}
+      </div>
+      <button className="Playlist-save" onClick={handleSavePlaylist}>
+        SAVE TO SPOTIFY
+      </button>
     </div>
   );
 };
