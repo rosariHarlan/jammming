@@ -1,7 +1,7 @@
 import "./Track.scss";
 
 const Track = (props) => {
-  const { onRemove, addTrack, isRemoval, track } = props;
+  const { addTrack, track, isRemoval, onRemove } = props;
 
   const addToPlaylist = () => {
     addTrack(track);

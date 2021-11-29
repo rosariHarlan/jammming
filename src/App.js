@@ -8,7 +8,7 @@ import Spotify_API from "./Spotify_API";
 const App = () => {
   const [search, setSearch] = useState(null);
   const [spotifyToken,setSpotifyToken] = useState(null);
-  const [playlistTracks, setPlaylistTracks] = useState(null);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   useEffect(() => {
     const spotifyTokenFromUrl = window.location.hash.split('&')[0].substr(14);
