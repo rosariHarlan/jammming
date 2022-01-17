@@ -20,7 +20,7 @@ const Playlist = (props) => {
     <div className="Playlist">
       <input onChange={e => setPlaylistName(e.target.value)} placeholder={playlistName} />
       <div className="TrackList">
-        {playlistTracks && playlistTracks.map((item) => (
+        {playlistTracks.map((item) => (
           <Track 
             key={item.id}
             track={item}

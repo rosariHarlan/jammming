@@ -6,7 +6,7 @@ import Playlist from "./components/Playlist";
 import Spotify_API from "./Spotify_API";
 
 const App = () => {
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState([]);
   const [spotifyToken,setSpotifyToken] = useState(null);
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
